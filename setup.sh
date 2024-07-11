@@ -121,11 +121,11 @@ installDepend() {
     elif [[ $PACKAGER == "nala" ]]; then
         ${SUDO_CMD} ${PACKAGER} install -y ${DEPENDENCIES}
     elif [[ $PACKAGER == "emerge" ]]; then
-        ${SUDO_CMD} ${PACKAGER} -v app-shells/bash app-shells/bash-completion app-arch/tar app-editors/neovim sys-apps/bat app-text/tree app-text/multitail app-misc/fastfetch
+        ${SUDO_CMD} ${PACKAGER} -v app-shells/bash app-shells/bash-completion app-arch/tar app-editors/neovim sys-apps/bat app-text/tree app-text/multitail app-misc/fastfetch nix-shells/trash-cli nix-shells/git nix-shells/wget nix-shells/curl nix-shells/xsel
     elif [[ $PACKAGER == "xbps-install" ]]; then
         ${SUDO_CMD} ${PACKAGER} -v ${DEPENDENCIES}
     elif [[ $PACKAGER == "nix-env" ]]; then
-        ${SUDO_CMD} ${PACKAGER} -iA nixos.bash nixos.bash-completion nixos.gnutar nixos.neovim nixos.bat nixos.tree nixos.multitail nixos.fastfetch nixos.unzip nixos.trash-cli nixos.git nixos.wget nixos.curl nixos.xsel
+        ${SUDO_CMD} ${PACKAGER} -iA nixos.bash nixos.bash-completion nixos.gnutar nixos.neovim nixos.bat nixos.tree nixos.multitail nixos.fastfetch nixos.trash-cli nixos.git nixos.wget nixos.curl nixos.xsel
     else
         ${SUDO_CMD} ${PACKAGER} install -yq ${DEPENDENCIES}
     fi
