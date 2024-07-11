@@ -94,7 +94,7 @@ checkEnv() {
 
 installDepend() {
     ## Check for dependencies.
-    DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch'
+    DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch unzip trash-cli git wget curl xsel'
     if ! command_exists nvim; then
         DEPENDENCIES="${DEPENDENCIES} neovim"
     fi
