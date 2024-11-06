@@ -6,7 +6,7 @@ YELLOW='\033[33m'
 GREEN='\033[32m'
 
 # Check if the home directory and linuxtoolbox folder exist, create them if they don't
-LINUXTOOLBOXDIR="$HOME/linuxtoolbox"
+LINUXTOOLBOXDIR="$HOME"
 
 if [ ! -d "$LINUXTOOLBOXDIR" ]; then
     echo "${YELLOW}Creating linuxtoolbox directory: $LINUXTOOLBOXDIR${RC}"
@@ -17,7 +17,7 @@ fi
 if [ -d "$LINUXTOOLBOXDIR/mybash" ]; then rm -rf "$LINUXTOOLBOXDIR/mybash"; fi
 
 echo "${YELLOW}Cloning mybash repository into: $LINUXTOOLBOXDIR/mybash${RC}"
-git clone https://github.com/ChrisTitusTech/mybash "$LINUXTOOLBOXDIR/mybash"
+git clone https://github.com/bachato/mybash "$LINUXTOOLBOXDIR/mybash"
 if [ $? -eq 0 ]; then
     echo "${GREEN}Successfully cloned mybash repository${RC}"
 else
@@ -99,7 +99,7 @@ checkEnv() {
 
 installDepend() {
     ## Check for dependencies.
-    DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch wget unzip fontconfig'
+    DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch wget unzip fontconfig curl neovim stow'
     if ! command_exists nvim; then
         DEPENDENCIES="${DEPENDENCIES} neovim"
     fi
@@ -257,10 +257,23 @@ linkConfig() {
             exit 1
         fi
     fi
+    ## Check if a bash_aliases file is already there.
+    OLD_BASH_ALIASES="$USER_HOME/.bash_aliases"
+    if [ -e "$OLD_BASH_ALIASES" ]; then
+        echo "${YELLOW}Moving old bash aliases config file to $USER_HOME/.bash_aliases.bak${RC}"
+        if ! mv "$OLD_BASH_ALIASES" "$USER_HOME/.bashrc.bak"; then
+            echo "${RED}Can't move the old bash aliases config file!${RC}"
+            exit 1
+        fi
+    fi
 
     echo "${YELLOW}Linking new bash config file...${RC}"
     ln -svf "$GITPATH/.bashrc" "$USER_HOME/.bashrc" || {
         echo "${RED}Failed to create symbolic link for .bashrc${RC}"
+        exit 1
+    }
+    ln -svf "$GITPATH/.bash_aliases" "$USER_HOME/.bash_aliases" || {
+        echo "${RED}Failed to create symbolic link for .bash_aliases${RC}"
         exit 1
     }
     ln -svf "$GITPATH/starship.toml" "$USER_HOME/.config/starship.toml" || {
