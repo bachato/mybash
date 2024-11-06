@@ -637,3 +637,4 @@ eval "$(zoxide init bash)"
 #######################################################
 # Source aliases definitions
 source .bash_aliases
+clear && fastfetch
