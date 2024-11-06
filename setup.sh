@@ -261,7 +261,7 @@ linkConfig() {
     OLD_BASH_ALIASES="$USER_HOME/.bash_aliases"
     if [ -e "$OLD_BASH_ALIASES" ]; then
         echo "${YELLOW}Moving old bash aliases config file to $USER_HOME/.bash_aliases.bak${RC}"
-        if ! mv "$OLD_BASH_ALIASES" "$USER_HOME/.bashrc.bak"; then
+        if ! mv "$OLD_BASH_ALIASES" "$USER_HOME/.bash_aliases.bak"; then
             echo "${RED}Can't move the old bash aliases config file!${RC}"
             exit 1
         fi
