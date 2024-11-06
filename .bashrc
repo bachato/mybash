@@ -21,14 +21,6 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 #######################################################
-# SOURCED BASH ALIAS'S 
-#######################################################
-# Source global definitions
-if [ -f ~/bash_aliases ]; then
-	. ~/bash_aliases
-fi
-
-#######################################################
 # EXPORTS
 #######################################################
 
@@ -639,3 +631,11 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+
+#######################################################
+# SOURCED BASH ALIAS'S 
+#######################################################
+# Source global definitions
+if [ -f ~/bash_aliases ]; then
+	. ~/bash_aliases
+fi
