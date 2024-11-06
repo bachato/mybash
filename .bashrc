@@ -633,11 +633,7 @@ eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
 #######################################################
-# SOURCED BASH ALIAS'S 
+# SOURCED BASH ALIAS'S
 #######################################################
-# Source global definitions
-if [ -f ~/.bash_aliases ]; then
-	source ~/.bash_aliases
-fi
-
+# Source aliases definitions
 source .bash_aliases
