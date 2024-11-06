@@ -24,8 +24,8 @@ fi
 # SOURCED BASH ALIAS'S 
 #######################################################
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+if [ -f ~/bash_aliases ]; then
+	. ~/bash_aliases
 fi
 
 #######################################################
