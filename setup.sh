@@ -6,7 +6,7 @@ YELLOW='\033[33m'
 GREEN='\033[32m'
 
 # Check if the home directory and linuxtoolbox folder exist, create them if they don't
-LINUXTOOLBOXDIR="$HOME"
+LINUXTOOLBOXDIR="$HOME/git_repos"
 
 if [ ! -d "$LINUXTOOLBOXDIR" ]; then
     echo "${YELLOW}Creating linuxtoolbox directory: $LINUXTOOLBOXDIR${RC}"
@@ -99,7 +99,7 @@ checkEnv() {
 
 installDepend() {
     ## Check for dependencies.
-    DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch wget unzip fontconfig curl neovim stow lsd'
+    DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch wget unzip fontconfig trash-cli curl neovim stow lsd tldr'
     if ! command_exists nvim; then
         DEPENDENCIES="${DEPENDENCIES} neovim"
     fi

@@ -1,0 +1,110 @@
+set autoindent
+set tabsize 4
+set tabstospaces
+set linenumbers
+set constantshow
+set smooth
+set backup
+set positionlog
+
+syntax "python" "\.py$" "\.pyw$"
+color brightred "^\s*#.*"
+color brightyellow "(def|class) .*:"
+color brightblue "\".*\"" "'.*'"
+color cyan "-?[0-9]+(\.[0-9]*)?"
+color green "\<(and|or|not|is|in|if|else|elif|while|for|return|import|from|as|break|continue|pass|try|except|finally|with|lambda|yield|global|nonlocal|assert|del)\>"
+
+# General Settings
+set autoindent       # Automatically indent new lines to match the previous
+set mouse            # Enable mouse support
+set nowrap           # Disable line wrapping
+set tabsize 4        # Set the tab width to 4 spaces
+set tabstospaces     # Convert tabs to spaces
+set smooth           # Smooth scrolling
+set linenumbers      # Show line numbers
+set constantshow     # Display cursor position in the status bar
+set quickblank       # Minimize messages after user prompts
+set titlecolor cyan  # Set title bar color
+set statuscolor green,white  # Set status bar color
+set functioncolor yellow  # Set function name highlighting
+set numbercolor magenta  # Line number color
+set whitespace "·"   # Display whitespace as dots
+
+# File Management
+set backup           # Create backup files with a ~ suffix
+set backupdir ~/.nano/backup # Directory for backup files
+set backupcurrent    # Keep backup files in the current directory
+set positionlog      # Remember the cursor position in previously edited files
+
+# Search and Navigation
+set casesensitive    # Make searches case-sensitive
+set historylog       # Enable search and replace history
+set matchbrackets "()" "{}" "[]" # Highlight matching brackets
+set scroller         # Use smooth scrolling for long documents
+
+# Syntax Highlighting
+# Syntax highlighting is defined using specific rules. Below is an example for Python:
+syntax "python" "\.py$" "\.pyw$"
+color brightred "^\s*#.*"       # Comments
+color brightyellow "(def|class) .*:" # Function and class definitions
+color brightblue "\".*\"" "'.*'" # Strings
+color cyan "-?[0-9]+(\.[0-9]*)?" # Numbers
+color green "\<(and|or|not|is|in|if|else|elif|while|for|return|import|from|as|break|continue|pass|try|except|finally|with|lambda|yield|global|nonlocal|assert|del)\>" # Keywords
+
+# Appearance
+set boldtext         # Use bold text instead of colors if the terminal doesn't support colors
+set titlecolor cyan  # Set the title bar color
+set promptcolor blue # Set the prompt color
+set keycolor red     # Highlight key combinations
+
+# Tabs and Indentation
+set tabsize 4        # Number of spaces per tab
+set tabstospaces     # Convert tabs to spaces
+set autoindent       # Indent new lines to match the previous
+
+# Backup and Undo
+set backup           # Enable backup files
+set backupsuffix ~   # Use ~ as the suffix for backup files
+set undo             # Enable undo support
+
+# Filetype Detection
+# You can configure syntax and filetype-specific settings:
+include /usr/share/nano/python.nanorc  # Syntax for Python
+include /usr/share/nano/javascript.nanorc  # Syntax for JavaScript
+include /usr/share/nano/html.nanorc  # Syntax for HTML
+include /usr/share/nano/json.nanorc  # Syntax for JSON
+
+# Custom Key Bindings
+# Key bindings in Nano are configured using the bind command:
+bind ^S savefile main       # Bind Ctrl+S to save the file
+bind ^Q exit main           # Bind Ctrl+Q to exit Nano
+bind ^Z undo main           # Bind Ctrl+Z to undo
+bind ^Y redo main           # Bind Ctrl+Y to redo
+
+# General Settings
+# set autoindent               # Automatically indent new lines to match the previous
+# set mouse                    # Enable mouse support
+# set nowrap                   # Disable line wrapping
+# set tabsize 2                # Set the tab width to 4 spaces
+# set tabstospaces             # Convert tabs to spaces
+# set smooth                   # Smooth scrolling
+# set linenumbers              # Show line numbers
+# set constantshow             # Display cursor position in the status bar
+set quickblank               # Minimize messages after user prompts
+set titlecolor cyan          # Set title bar color
+set statuscolor green,white  # Set status bar color
+set functioncolor yellow     # Set function name highlighting
+set numbercolor magenta      # Line number color
+set whitespace "·"          # Display whitespace as dots
+
+# File Management
+# Search and Navigation
+# Syntax Highlighting
+# Appearance
+# Tabs and Indentation
+# Backup and Undo
+# Filetype Detection
+# Custom Key Bindings
+# Plugins
+
+
