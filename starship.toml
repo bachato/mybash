@@ -1,9 +1,7 @@
 format = """
 [](#3B4252)\
 $python\
-[ ^b ](bg:#434C5E fg:#3B4252)\
 $hostname\
-[ ^b ](bg:#434C5E fg:#3B4252)\
 $username\
 [](bg:#434C5E fg:#3B4252)\
 $directory\
@@ -35,7 +33,7 @@ command_timeout = 5000
 # Only show hostname if connected via SSH (default is false)
 ssh_only = true
 # Display the full hostname (default is false, which shows the short name)
-format = '[$ssh_symbol](bold blue)[$hostname](bold blue)'
+format = '[$ssh_symbol](bg:#3B4252 bold blue)[$hostname ](bg:#3B4252 bold blue)'
 disabled = false
 
 # You can also replace your username with a neat symbol like  to save some space
