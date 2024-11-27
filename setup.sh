@@ -99,11 +99,7 @@ checkEnv() {
 
 installDepend() {
     ## Check for dependencies.
-<<<<<<< HEAD
-    DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch wget unzip fontconfig curl neovim stow lsd sudo trash-cli'
-=======
     DEPENDENCIES='bash bash-completion tar bat tree multitail fastfetch wget unzip fontconfig trash-cli curl neovim stow lsd tldr'
->>>>>>> 0bf93f768757973d484eab444484a13b00e7aa3c
     if ! command_exists nvim; then
         DEPENDENCIES="${DEPENDENCIES} neovim"
     fi
