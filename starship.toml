@@ -28,6 +28,12 @@ command_timeout = 5000
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
+[hostname]
+# Only show hostname if connected via SSH (default is false)
+ssh_only = false
+# Display the full hostname (default is false, which shows the short name)
+format = "[$hostname](bold blue) "
+
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
